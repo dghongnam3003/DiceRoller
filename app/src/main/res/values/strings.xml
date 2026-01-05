@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DiceRoller</string>
     <string name="roll">ROLL</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="register">Register</string>
+    <string name="registration_title">Register</string>
 </resources>

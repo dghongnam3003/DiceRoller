@@ -1,6 +1,7 @@
 package com.example.diceroller
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -17,8 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val rollButton: Button = findViewById(R.id.button2)
+        val registerButton: Button = findViewById(R.id.registerButton)
 
         rollButton.setOnClickListener { rollDice() }
+        registerButton.setOnClickListener { openRegistration() }
     }
 
     /**
@@ -32,6 +35,14 @@ class MainActivity : AppCompatActivity() {
         // Update the screen with the dice roll
         val resultTextView: TextView = findViewById(R.id.textView)
         resultTextView.text = diceRoll.toString()
+    }
+
+    /**
+     * Open the registration activity.
+     */
+    private fun openRegistration() {
+        val intent = Intent(this, RegistrationActivity::class.java)
+        startActivity(intent)
     }
 }
 
