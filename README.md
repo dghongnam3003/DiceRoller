@@ -9,6 +9,150 @@ A simple Android application that allows users to roll a virtual 6-sided dice an
 - 🔢 Display dice roll results instantly
 - 📐 Built with modern Android development practices
 
+## Application Flow
+
+### High-Level Flow Description
+
+The Dice Roller app follows a straightforward user interaction pattern designed for simplicity and ease of use:
+
+#### 1. **Application Launch**
+```
+User launches app → MainActivity is created → UI layout is inflated → Ready state
+```
+- The app starts with `MainActivity.onCreate()`
+- The layout (`activity_main.xml`) is loaded, displaying:
+  - A centered `TextView` for showing dice results
+  - A "ROLL" button below the text view
+- The UI enters a ready state, waiting for user interaction
+
+#### 2. **User Interaction Flow**
+```
+User taps "ROLL" button → rollDice() method called → Random number generated → UI updated
+```
+- **Trigger**: User taps the "ROLL" button
+- **Action**: Button's `OnClickListener` invokes `rollDice()` method
+- **Processing**: 
+  - New `Dice(6)` object is instantiated
+  - `dice.roll()` generates random number between 1-6
+  - Result is stored in `diceRoll` variable
+- **Display**: `TextView` is updated with the new dice value
+
+#### 3. **State Management**
+```
+Initial state → User interaction → Result display → Ready for next interaction
+```
+- **Initial State**: App shows empty or default text view
+- **Active State**: During dice roll calculation (instantaneous)
+- **Result State**: Display shows the rolled number (1-6)
+- **Ready State**: App returns to waiting for next user interaction
+
+#### 4. **Repeat Cycle**
+```
+Result displayed → User can immediately tap "ROLL" again → New result generated
+```
+- No cooldown or delay between rolls
+- Each roll is independent and generates a fresh random result
+- Previous results are not stored or displayed
+
+### Technical Flow Architecture
+
+#### Component Interaction Diagram
+```
+MainActivity
+    │
+    ├── UI Components
+    │   ├── Button (id: button2) ──┐
+    │   └── TextView (id: textView) │
+    │                              │
+    └── Business Logic             │
+        └── rollDice() method ←────┘
+            │
+            └── Dice class
+                └── roll() method
+                    └── Random number generation
+```
+
+#### Data Flow
+1. **Input**: User button press (UI event)
+2. **Processing**: Random number generation (1-6 range)
+3. **Output**: Display update (TextView content change)
+
+#### Event Flow Sequence
+```mermaid
+sequenceDiagram
+    participant User
+    participant MainActivity
+    participant Button
+    participant TextView
+    participant Dice
+
+    User->>Button: Tap "ROLL"
+    Button->>MainActivity: onClick event
+    MainActivity->>MainActivity: rollDice()
+    MainActivity->>Dice: new Dice(6)
+    Dice-->>MainActivity: dice instance
+    MainActivity->>Dice: dice.roll()
+    Dice-->>MainActivity: random number (1-6)
+    MainActivity->>TextView: setText(result)
+    TextView-->>User: Display new number
+```
+
+### Key Algorithms
+
+#### Random Number Generation
+- **Algorithm**: Kotlin's `(1..numSides).random()`
+- **Range**: Inclusive range from 1 to 6
+- **Distribution**: Uniform probability (each number has 1/6 chance)
+- **Seed**: Uses system default random seed for unpredictability
+
+#### UI Update Pattern
+- **Method**: Direct reference to TextView via `findViewById()`
+- **Update**: Immediate synchronous update on UI thread
+- **Format**: Simple integer-to-string conversion
+
+### Error Handling & Edge Cases
+
+#### Current Implementation
+- **No explicit error handling**: Relies on Android framework stability
+- **No input validation**: Button click is the only input method
+- **No state persistence**: Results are not saved across app lifecycle
+
+#### Potential Edge Cases (Handled by Framework)
+- Device rotation: Android handles activity recreation
+- Memory pressure: Android manages activity lifecycle
+- Button spam-clicking: Each click processes independently
+
+### Performance Characteristics
+
+#### Time Complexity
+- **Random generation**: O(1) constant time
+- **UI update**: O(1) constant time  
+- **Overall**: O(1) per dice roll
+
+#### Memory Usage
+- **Dice object**: Lightweight, single integer field
+- **No state accumulation**: Previous results are not stored
+- **Memory footprint**: Minimal, suitable for low-end devices
+
+#### Scalability Considerations
+- **Single dice limitation**: Current design supports only one die
+- **No history**: Results are not accumulated or stored
+- **Extension potential**: Architecture supports easy enhancement for multiple dice
+
+### User Experience Flow
+
+#### Typical User Journey
+1. **Discovery**: User opens app from launcher
+2. **Understanding**: Clear UI indicates dice rolling function
+3. **Interaction**: Single tap to roll dice
+4. **Feedback**: Immediate visual result
+5. **Repetition**: Seamless re-rolling experience
+
+#### Accessibility Considerations
+- **Visual**: Large text size (36sp) for readability
+- **Motor**: Large button target for easy tapping
+- **Cognitive**: Simple, single-action interface
+
 ## Screenshots
 
 *Add screenshots of your app here*
@@ -20,6 +164,7 @@ A simple Android application that allows users to roll a virtual 6-sided dice an
 - **Min SDK**: API level as configured
 - **Build Tool**: Gradle with Kotlin DSL
 - **Architecture**: Simple Activity-based architecture
+- **UI Framework**: Android Views with ConstraintLayout
 
 ## Project Structure
 
@@ -111,6 +256,22 @@ class Dice(private val numSides: Int) {
 
 The `Dice` class uses Kotlin's built-in `random()` function to generate random numbers within the specified range.
 
+### Application Lifecycle
+
+#### Activity Lifecycle Flow
+```kotlin
+onCreate() → setContentView() → findViewById() → setOnClickListener()
+    ↓
+User interaction triggers rollDice()
+    ↓
+New dice roll generated and displayed
+```
+
+#### Key Methods
+- **`onCreate()`**: Initializes UI and sets up event listeners
+- **`rollDice()`**: Core business logic for dice rolling
+- **`Dice.roll()`**: Random number generation algorithm
+
 ## Contributing
 
 1. Fork the repository
@@ -143,6 +304,9 @@ Run tests using:
 - [ ] Implement dice rolling animations
 - [ ] Add multiple dice rolling capability
 - [ ] Include statistics tracking
+- [ ] Add dice roll persistence across app sessions
+- [ ] Implement shake-to-roll gesture
+- [ ] Add customizable dice themes and colors
 
 ## License
 
