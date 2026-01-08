@@ -4,6 +4,7 @@
         <!-- Customize your light theme here. -->
         <item name="android:windowBackground">@color/cyan_blue</item>
         <item name="android:colorBackground">@color/cyan_blue</item>
+        <item name="colorSurface">@color/cyan_blue</item>
     </style>
 
     <style name="Theme.DiceRoller" parent="Base.Theme.DiceRoller" />
