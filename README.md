@@ -6,7 +6,7 @@ This is a development workspace for the project. Below are the details about the
 
 ## Getting Started
 
-### Prerequisites
+### Prquisites
 - Node.js (v18 or higher)
 - npm or pnpm
 - Git
@@ -85,51 +85,50 @@ pnpm test
 To deploy this project to Cloudflare, follow these steps:
 
 1. **Install Wrangler**:
-   Ensure you have the Cloudflare Wrangler CLI installed. If not, install it globally:
+   Ensure you have the Wrangler CLI installed. If not, install it using npm:
    ```bash
    npm install -g wrangler
    ```
 
-2. **Authenticate with Cloudflare**:
-   Log in to your Cloudflare account using Wrangler:
+2. **Login to Cloudflare**:
+   Authenticate with your Cloudflare account:
    ```bash
    wrangler login
    ```
 
-3. **Configure the Project**:
-   - Create a `wrangler.toml` file in the root of your project if it doesn't already exist.
-   - Configure the `wrangler.toml` file with your project details. Example:
-     ```toml
-     name = "your-project-name"
-     type = "javascript"
-     account_id = "your-cloudflare-account-id"
-     workers_dev = true
-     
-     [build]
-     command = "npm run build"
-     
-     [build.upload]
-     format = "service-worker"
-     ```
+3. **Configure Wrangler**:
+   Create a `wrangler.toml` file in the root of your project and configure it for your Cloudflare Workers setup. Example:
+   ```toml
+   name = "your-worker-name"
+   type = "javascript"
+   account_id = "your-cloudflare-account-id"
+   workers_dev = true
+   
+   [build]
+   command = "npm run build"
+   
+   [build.upload]
+   format = "service-worker"
+   ```
 
-4. **Build the Project**:
+4. **Build Your Project**:
    Run the build command to generate the production-ready files:
    ```bash
    npm run build
    ```
 
-5. **Deploy the Project**:
-   Use Wrangler to deploy the project to Cloudflare:
+5. **Deploy to Cloudflare**:
+   Use Wrangler to deploy your project:
    ```bash
    wrangler publish
    ```
 
-6. **Verify the Deployment**:
-   After deployment, Wrangler will provide a URL where your project is hosted. Open this URL in your browser to verify that the deployment was successful.
+6. **Verify Deployment**:
+   After deployment, verify that your project is live by accessing the URL provided by Cloudflare.
 
 ### Additional Notes
-- Ensure your `wrangler.toml` file is correctly configured for your project type (e.g., Workers, Pages, or other Cloudflare services).
-- If you encounter any issues during deployment, refer to the [Cloudflare Wrangler documentation](https://developers.cloudflare.com/workers/wrangler/) for troubleshooting.
+- Ensure your `wrangler.toml` file is correctly configured with your Cloudflare account details.
+- If you encounter issues, refer to the [Cloudflare Workers documentation](https://developers.cloudflare.com/workers/) for troubleshooting.
 
 ## Contributing
 
