@@ -2,104 +2,56 @@
 
 ## Overview
 
-This is a development workspace for the project. Below are the details about the project structure, setup, and usage.
+This project is currently in development mode. More details will be added as the project progresses.
 
 ## Getting Started
 
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or pnpm
-- Git
+To get started with this project, follow these steps:
 
-### Installation
-
-1. Clone the repository:
+1. **Clone the repository** (if applicable):
    ```bash
    git clone <repository-url>
    ```
 
-2. Navigate to the project directory:
-   ```bash
-   cd <project-directory>
-   ```
-
-3. Install dependencies:
+2. **Install dependencies**:
    ```bash
    npm install
    # or
    pnpm install
+   # or
+   yarn install
    ```
 
-### Running the Project
-
-To start the development server:
-```bash
-npm run dev
-# or
-pnpm dev
-```
-
-### Building the Project
-
-To build the project for production:
-```bash
-npm run build
-# or
-pnpm build
-```
-
-### Running Tests
-
-To run tests:
-```bash
-npm test
-# or
-pnpm test
-```
-
-## Project Structure
-
-```
-.
-├── src/                  # Source files
-│   ├── components/       # Reusable components
-│   ├── utils/            # Utility functions
-│   └── ...
-├── public/               # Static assets
-├── tests/                # Test files
-├── package.json          # Project configuration
-└── README.md             # Project documentation
-```
+3. **Run the project**:
+   ```bash
+   npm start
+   # or
+   pnpm start
+   # or
+   yarn start
+   ```
 
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Feature 1: Description of feature 1.
+- Feature 2: Description of feature 2.
 
 ## Contributing
 
+If you'd like to contribute to this project, please follow these guidelines:
+
 1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. Make your changes and commit them:
-   ```bash
-   git commit -m "Add your commit message"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. Open a pull request.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with descriptive messages.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
 For questions or feedback, please contact:
-- Email: contact@example.com
+- Email: example@example.com
 - GitHub: [Your GitHub Profile](https://github.com/your-profile)
