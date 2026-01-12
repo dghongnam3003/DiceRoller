@@ -5,4 +5,5 @@
     <color name="cyan_blue">#00BFFF</color>
     <color name="blue">#FF0000FF</color>
     <color name="green">#FF00FF00</color>
+    <color name="red">#FFFF0000</color>
 </resources>

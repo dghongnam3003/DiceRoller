@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.DiceRoller" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="android:windowBackground">@color/blue</item>
-        <item name="android:colorBackground">@color/blue</item>
+        <item name="android:windowBackground">@color/red</item>
+        <item name="android:colorBackground">@color/red</item>
     </style>
 
     <style name="Theme.DiceRoller" parent="Base.Theme.DiceRoller" />
