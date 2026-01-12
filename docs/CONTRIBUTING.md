@@ -1,178 +1,326 @@
-# Contributing to Dice Roller App
+# Contributing Guide
 
-Thank you for your interest in contributing to the Dice Roller app! We welcome contributions from everyone.
+Thank you for your interest in contributing to the Dice Roller project! We welcome contributions from everyone.
 
-## How to Contribute
+## Ways to Contribute
 
-### Reporting Issues
+### 🐛 Bug Reports
+Help us identify and fix issues:
+- Report bugs via GitHub Issues
+- Include steps to reproduce
+- Provide device/OS information
+- Attach screenshots if helpful
 
-If you find a bug or have a feature request:
+### 🚀 Feature Requests
+Suggest new features or improvements:
+- Open a GitHub Issue with your idea
+- Describe the use case
+- Explain why it would be valuable
+- Include mockups if applicable
 
-1. Check the existing issues to avoid duplicates
-2. Create a new issue with a clear title
-3. Provide detailed information:
-   - Steps to reproduce (for bugs)
-   - Expected behavior
-   - Actual behavior
-   - Screenshots (if applicable)
-   - Device and Android version
+### 💻 Code Contributions
+Submit pull requests for:
+- Bug fixes
+- New features
+- Documentation improvements
+- Test enhancements
 
-### Suggesting Features
+### 📝 Documentation
+Help improve our documentation:
+- Fix typos or unclear explanations
+- Add missing documentation
+- Improve existing guides
+- Create tutorials
 
-For feature suggestions:
+### 🧪 Testing
+Contribute to testing efforts:
+- Write new test cases
+- Improve test coverage
+- Fix flaky tests
+- Add performance tests
 
-1. Open a new issue
-2. Describe the feature in detail
-3. Explain why it would be useful
-4. Provide examples or mockups if possible
+### 🌍 Localization
+Help translate the app:
+- Add new language support
+- Improve existing translations
+- Fix translation issues
 
-### Code Contributions
+## Getting Started
 
-To contribute code:
+### Prerequisites
+- Android Studio installed
+- Basic Kotlin knowledge
+- Understanding of Android development
+- GitHub account
 
+### Setup
 1. Fork the repository
-2. Create a new branch for your feature/bug fix:
-   ```bash
-   git checkout -b feature/your-feature-name
-   # or
-   git checkout -b bugfix/your-bug-fix
-   ```
-3. Make your changes
-4. Commit your changes with clear messages:
-   ```bash
-   git commit -m "Add feature: your feature description"
-   ```
-5. Push to your fork:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-6. Create a pull request to the main repository
+2. Clone your fork
+3. Open in Android Studio
+4. Build and run the app
 
-## Development Guidelines
+```bash
+git clone https://github.com/your-username/dice-roller.git
+cd dice-roller
+```
 
-### Code Style
+## Development Workflow
 
-- Follow the existing code style and patterns
-- Use meaningful variable and function names
-- Add comments for complex logic
-- Keep functions small and focused
-- Follow Kotlin coding conventions
+### 1. Find an Issue
+- Check open GitHub Issues
+- Look for "good first issue" labels
+- Ask if you're unsure about anything
 
-### Commit Messages
+### 2. Create a Branch
+```bash
+git checkout -b feature/your-feature-name
+```
 
-- Use present tense ("Add feature" not "Added feature")
-- Keep the first line under 50 characters
-- Provide detailed description in the body if needed
-- Reference related issues (e.g., "Fixes #123")
+### 3. Make Changes
+- Follow coding standards
+- Write tests for new functionality
+- Update documentation
+- Keep changes focused
 
-### Pull Request Process
+### 4. Test Your Changes
+- Run existing tests
+- Add new tests
+- Test on multiple devices
+- Verify no regressions
 
-1. Ensure your code compiles without errors
-2. Run existing tests to make sure nothing breaks
-3. Add tests for new functionality
-4. Update documentation if needed
-5. Request review from maintainers
-6. Address any feedback or requested changes
+### 5. Commit Changes
+```bash
+git add .
+git commit -m "Add feature: brief description"
+```
+
+### 6. Push and Create PR
+```bash
+git push origin feature/your-feature-name
+```
+Then create a Pull Request on GitHub.
+
+## Code Standards
+
+### Kotlin Style
+- Follow [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
+- Use 4-space indentation
+- Prefer immutability (`val` over `var`)
+- Use meaningful names
+
+### Android Best Practices
+- Follow Android design guidelines
+- Use AndroidX libraries
+- Follow MVVM architecture patterns
+- Handle configuration changes properly
+
+### Testing
+- Write tests for all new features
+- Maintain high test coverage
+- Follow Arrange-Act-Assert pattern
+- Keep tests fast and reliable
+
+### Documentation
+- Update docs when changing functionality
+- Use clear, concise language
+- Include code examples
+- Keep documentation up-to-date
+
+## Pull Request Guidelines
+
+### Before Submitting
+- [ ] Code follows project standards
+- [ ] All tests pass
+- [ ] New tests added for new functionality
+- [ ] Documentation updated
+- [ ] No merge conflicts
+- [ ] Changes are focused on one issue
+
+### PR Template
+```markdown
+## Description
+
+[Clear description of changes]
+
+## Related Issue
+
+Fixes #123 or Addresses #456
+
+## Changes Made
+
+- Change 1
+- Change 2
+- Change 3
 
 ## Testing
 
-### Running Tests
+- Test 1: Description
+- Test 2: Description
+- Test 3: Description
 
-```bash
-# Run unit tests
-./gradlew test
+## Screenshots (if applicable)
 
-# Run instrumentation tests
-./gradlew connectedAndroidTest
+[Before/after screenshots]
+
+## Checklist
+
+- [ ] Code follows style guidelines
+- [ ] Tests pass
+- [ ] Documentation updated
+- [ ] No breaking changes
 ```
 
-### Writing Tests
+## Review Process
 
-- Add unit tests for new functionality
-- Test edge cases and error conditions
-- Keep tests focused and fast
-- Use descriptive test names
+### What to Expect
+1. Initial review within 3-5 days
+2. Feedback on code quality
+3. Requests for changes if needed
+4. Approval and merge
 
-## Documentation
+### Review Criteria
+- Code quality and style
+- Test coverage
+- Documentation
+- Performance impact
+- Security considerations
+- Backwards compatibility
 
-### Updating Documentation
-
-If you add new features or change existing behavior:
-
-1. Update relevant documentation files
-2. Add code comments for complex logic
-3. Update the README if public APIs change
-4. Add examples if helpful
-
-### Documentation Standards
-
-- Use Markdown format
-- Keep documentation clear and concise
-- Use code examples where helpful
-- Update architecture diagrams if needed
+### Common Feedback
+- "Please add tests for this case"
+- "Can you update the documentation?"
+- "Let's discuss this approach"
+- "Please rebase on latest main"
 
 ## Community Guidelines
 
 ### Code of Conduct
-
-We expect all contributors to:
-
 - Be respectful and inclusive
-- Use welcoming and friendly language
-- Be open to constructive feedback
-- Focus on technical discussions
-- Respect different viewpoints and experiences
+- Welcome new contributors
+- Provide constructive feedback
+- Be patient and helpful
 
 ### Communication
+- Use GitHub Issues for discussions
+- Keep conversations professional
+- Be open to different viewpoints
+- Focus on technical merits
 
-- Use clear and professional language
-- Be patient and helpful
-- Provide constructive feedback
-- Ask questions when unsure
-- Document decisions and discussions
+### Recognition
+- Contributors listed in project
+- Significant contributions highlighted
+- Regular contributor spotlights
+- Public acknowledgment
+
+## Technical Details
+
+### Project Structure
+```
+dice-roller/
+├── app/                  # Main application
+│   ├── src/              # Source code
+│   │   ├── main/         # Production code
+│   │   └── test/         # Tests
+├── docs/                 # Documentation
+└── gradle/               # Build configuration
+```
+
+### Key Files
+- `app/src/main/java/com/example/diceroller/MainActivity.kt` - Main logic
+- `app/src/main/res/layout/activity_main.xml` - Main layout
+- `app/build.gradle.kts` - Dependencies
+- `docs/` - All documentation
+
+### Build System
+- Gradle Kotlin DSL
+- Android Gradle Plugin
+- Standard Android build process
+
+## Advanced Contributions
+
+### Architecture Changes
+- Discuss in GitHub Issues first
+- Provide detailed rationale
+- Include performance analysis
+- Consider backwards compatibility
+
+### Major Features
+- Break into smaller PRs
+- Create design documents
+- Get early feedback
+- Implement incrementally
+
+### Performance Improvements
+- Profile before optimizing
+- Provide benchmark data
+- Consider trade-offs
+- Document improvements
 
 ## Getting Help
 
-If you need help:
+### Resources
+- Android Developer Documentation
+- Kotlin Documentation
+- Project README
+- Existing code examples
 
-1. Check existing documentation
-2. Look at similar code in the project
-3. Ask questions in issues or discussions
-4. Request clarification on requirements
+### Asking Questions
+- Open a GitHub Issue with your question
+- Be specific about what you're trying to do
+- Include relevant code snippets
+- Describe what you've tried
+
+### Mentorship
+- Experienced contributors available
+- Ask for guidance on complex issues
+- Pair programming sessions possible
+- Code review assistance
 
 ## Recognition
 
-All contributors will be recognized:
+### Contributor Benefits
+- Experience with real-world Android development
+- Portfolio piece
+- Networking opportunities
+- Reference for future opportunities
 
-- In the project's CONTRIBUTORS file
-- In release notes
-- Through GitHub contributions
+### Contributor Levels
+1. **First-time Contributor**: Small fixes and improvements
+2. **Regular Contributor**: Multiple significant contributions
+3. **Maintainer**: Review rights and project leadership
+4. **Core Team**: Full project access and decision-making
 
-## License
+## Legal
 
-By contributing to this project, you agree that your contributions will be licensed under the project's MIT License.
+### License
+- All contributions licensed under MIT License
+- You retain copyright to your contributions
+- Project maintains overall license
 
-## Maintainers
+### Contributor License Agreement
+- No formal CLA required
+- By contributing, you agree to license your work under MIT
+- You certify you have rights to contribute the code
 
-Project maintainers are responsible for:
+## FAQ
 
-- Reviewing pull requests
-- Merging approved changes
-- Managing releases
-- Maintaining documentation
-- Ensuring code quality
+### How do I get started?
+Start with "good first issue" labeled issues and ask questions!
 
-## Release Process
+### What if I'm stuck?
+Ask for help in the GitHub Issue - we're happy to assist!
 
-1. Create a release branch
-2. Update version numbers
-3. Update changelog
-4. Run final tests
-5. Create GitHub release
-6. Publish to app stores (if applicable)
+### How long does review take?
+Typically 3-5 days, depending on complexity and reviewer availability.
 
-## Questions?
+### Can I work on multiple issues?
+Yes! But focus on completing one before starting another.
 
-If you have any questions about contributing, please open an issue or contact the maintainers.
+### What if my PR isn't accepted?
+We'll explain why and suggest improvements. Don't be discouraged!
 
-Thank you for contributing to Dice Roller!
+## Thank You!
+
+We appreciate all contributions, big and small. Together we can make the Dice Roller app even better!
+
+Happy coding! 🎲📱
