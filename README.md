@@ -36,6 +36,33 @@ To get started with this project, follow these steps:
 - Feature 1: Description of feature 1.
 - Feature 2: Description of feature 2.
 
+## Deployment
+
+### Cloudflare
+
+To deploy this project to Cloudflare, follow these steps:
+
+1. **Install Wrangler**:
+   ```bash
+   npm install -g wrangler
+   ```
+
+2. **Authenticate with Cloudflare**:
+   ```bash
+   wrangler login
+   ```
+
+3. **Configure your project**:
+   - Create a `wrangler.toml` file in the root of your project.
+   - Configure the `name`, `type`, and other settings as needed.
+
+4. **Deploy**:
+   ```bash
+   wrangler deploy
+   ```
+
+For more details, refer to the [Cloudflare Workers documentation](https://developers.cloudflare.com/workers/).
+
 ## Contributing
 
 If you'd like to contribute to this project, please follow these guidelines:
