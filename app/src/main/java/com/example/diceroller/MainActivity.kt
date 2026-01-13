@@ -39,4 +39,23 @@ class Dice(private val numSides: Int) {
     fun roll(): Int {
         return (1..numSides).random()
     }
+    
+    /**
+     * Roll multiple dice and return the results as a list.
+     * @param numDice The number of dice to roll.
+     * @return A list of integers representing the results of each dice roll.
+     */
+    fun rollMultiple(numDice: Int): List<Int> {
+        require(numDice > 0) { "Number of dice must be greater than 0" }
+        return List(numDice) { roll() }
+    }
+    
+    /**
+     * Roll multiple dice and return the sum of the results.
+     * @param numDice The number of dice to roll.
+     * @return The sum of all dice rolls.
+     */
+    fun rollMultipleAndSum(numDice: Int): Int {
+        return rollMultiple(numDice).sum()
+    }
 }
