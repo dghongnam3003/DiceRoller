@@ -1,6 +1,7 @@
 package com.example.diceroller
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -24,6 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         // Set up color selection buttons
         setupColorButtons()
+
+        // Set up registration button
+        val registerButton: Button = findViewById(R.id.registerButton)
+        registerButton.setOnClickListener { 
+            val intent = Intent(this, RegistrationActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     /**

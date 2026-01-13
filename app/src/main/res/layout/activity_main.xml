@@ -93,4 +93,15 @@
             android:layout_margin="5dp"/>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/colorButtonsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/dice_green"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
