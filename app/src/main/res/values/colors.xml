@@ -9,4 +9,11 @@
     <color name="text_secondary">#757575</color>
     <color name="error_color">#B00020</color>
     <color name="purple_500">#6200EE</color>
+    <color name="background_light">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="gradient_start">#00BFFF</color>
+    <color name="gradient_end">#0080FF</color>
+    <color name="ripple_color">#80FFFFFF</color>
+    <color name="gray">#757575</color>
+    <color name="light_gray">#E0E0E0</color>
 </resources>
