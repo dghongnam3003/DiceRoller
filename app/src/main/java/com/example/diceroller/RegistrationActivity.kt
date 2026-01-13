@@ -2,8 +2,13 @@ package com.example.diceroller
 
 import android.content.Intent
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
+import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -25,6 +30,12 @@ class RegistrationActivity : AppCompatActivity() {
         val usernameLayout: TextInputLayout = findViewById(R.id.usernameEditText).parent.parent as TextInputLayout
         val emailLayout: TextInputLayout = findViewById(R.id.emailEditText).parent.parent as TextInputLayout
         val passwordLayout: TextInputLayout = findViewById(R.id.passwordEditText).parent.parent as TextInputLayout
+        val rootLayout: ConstraintLayout = findViewById(R.id.rootLayout)
+
+        // Add animation to buttons
+        val fadeInAnimation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
+        registerButton.startAnimation(fadeInAnimation)
+        loginButton.startAnimation(fadeInAnimation)
 
         registerButton.setOnClickListener {
             val username = usernameEditText.text.toString().trim()
@@ -48,6 +59,31 @@ class RegistrationActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        // Add focus change listeners for better UX
+        usernameEditText.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                usernameLayout.boxStrokeColor = getColor(R.color.primary_dark)
+            } else {
+                usernameLayout.boxStrokeColor = getColor(R.color.cyan_blue)
+            }
+        }
+
+        emailEditText.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                emailLayout.boxStrokeColor = getColor(R.color.primary_dark)
+            } else {
+                emailLayout.boxStrokeColor = getColor(R.color.cyan_blue)
+            }
+        }
+
+        passwordEditText.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                passwordLayout.boxStrokeColor = getColor(R.color.primary_dark)
+            } else {
+                passwordLayout.boxStrokeColor = getColor(R.color.cyan_blue)
+            }
         }
     }
 
