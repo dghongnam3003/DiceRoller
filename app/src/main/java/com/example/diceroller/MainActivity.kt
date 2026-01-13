@@ -1,9 +1,13 @@
 package com.example.diceroller
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 /**
@@ -11,14 +15,71 @@ import androidx.appcompat.app.AppCompatActivity
  * on the screen.
  */
 class MainActivity : AppCompatActivity() {
+    private var diceColor: Int = Color.WHITE // Default dice color
+    private val colorOptions = arrayOf(
+        "Red", "Blue", "Green", "Yellow", "Purple", "Orange", "Pink", "Cyan"
+    )
+    private val colorValues = intArrayOf(
+        Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW, 
+        Color.parseColor("#800080"), Color.parseColor("#FFA500"), 
+        Color.parseColor("#FFC0CB"), Color.CYAN
+    )
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val rollButton: Button = findViewById(R.id.button2)
+        val colorPickerButton: Button = findViewById(R.id.colorPickerButton)
+
+        // Load saved color preference
+        loadDiceColor()
 
         rollButton.setOnClickListener { rollDice() }
+        colorPickerButton.setOnClickListener { showColorPickerDialog() }
+    }
+
+    /**
+     * Show a dialog to let the user choose a dice color.
+     */
+    private fun showColorPickerDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Choose Dice Color")
+        builder.setItems(colorOptions) { dialog, which ->
+            // Save the selected color
+            diceColor = colorValues[which]
+            saveDiceColor(diceColor)
+            
+            // Show a message to the user
+            val colorName = colorOptions[which]
+            val resultTextView: TextView = findViewById(R.id.textView)
+            resultTextView.text = "Dice color changed to $colorName"
+        }
+        builder.setNegativeButton("Cancel") { dialog, _ ->
+            dialog.dismiss()
+        }
+        
+        builder.show()
+    }
+
+    /**
+     * Save the selected dice color to SharedPreferences.
+     */
+    private fun saveDiceColor(color: Int) {
+        val sharedPref = getSharedPreferences("DiceRollerPrefs", Context.MODE_PRIVATE)
+        with(sharedPref.edit()) {
+            putInt("diceColor", color)
+            apply()
+        }
+    }
+
+    /**
+     * Load the saved dice color from SharedPreferences.
+     */
+    private fun loadDiceColor() {
+        val sharedPref = getSharedPreferences("DiceRollerPrefs", Context.MODE_PRIVATE)
+        diceColor = sharedPref.getInt("diceColor", Color.WHITE)
     }
 
     /**
@@ -34,6 +95,9 @@ class MainActivity : AppCompatActivity() {
         // Update the screen with the dice rolls and sum
         val resultTextView: TextView = findViewById(R.id.textView)
         resultTextView.text = "Rolled: ${diceRolls.joinToString(", ")}\nSum: $sum"
+        
+        // Apply the selected dice color to the result text
+        resultTextView.setTextColor(diceColor)
     }
 }
 
