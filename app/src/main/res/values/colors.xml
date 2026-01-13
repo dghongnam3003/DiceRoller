@@ -3,4 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="cyan_blue">#00BFFF</color>
+    
+    <!-- Dice colors -->
+    <color name="dice_red">#FF0000</color>
+    <color name="dice_blue">#0000FF</color>
+    <color name="dice_green">#00FF00</color>
+    <color name="dice_yellow">#FFFF00</color>
+    <color name="dice_purple">#800080</color>
+    <color name="dice_orange">#FFA500</color>
 </resources>

@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="36sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,5 +27,70 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/colorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Dice Color:"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:id="@+id/colorButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/colorLabel"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/redButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/dice_red"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/blueButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/dice_blue"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/greenButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/dice_green"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/yellowButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/dice_yellow"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/purpleButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/dice_purple"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/orangeButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/dice_orange"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
