@@ -25,13 +25,15 @@ class MainActivity : AppCompatActivity() {
      * Roll the dice and update the screen with the result.
      */
     private fun rollDice() {
-        // Create new Dice object with 6 sides and roll it
+        // Create new Dice object with 6 sides and roll multiple dice
         val dice = Dice(6)
-        val diceRoll = dice.roll()
+        val numDice = 3 // Roll 3 dice in a turn
+        val diceRolls = dice.rollMultiple(numDice)
+        val sum = diceRolls.sum()
 
-        // Update the screen with the dice roll
+        // Update the screen with the dice rolls and sum
         val resultTextView: TextView = findViewById(R.id.textView)
-        resultTextView.text = diceRoll.toString()
+        resultTextView.text = "Rolled: ${diceRolls.joinToString(", ")}\nSum: $sum"
     }
 }
 
