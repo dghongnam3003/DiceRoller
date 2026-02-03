@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DiceRoller</string>
     <string name="roll">ROLL</string>
+    <string name="help_icon_description">Show help</string>
 </resources>
