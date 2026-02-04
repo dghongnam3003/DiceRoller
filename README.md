@@ -2,6 +2,9 @@
 
 This is a brief description of the project.
 
+## Table of Contents
+*   [High-Level Flow Description](docs/high_level_flow.md)
+
 ## Technologies Used
 * Kotlin
 * Gradle
